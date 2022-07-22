@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang = "en">
+  <head>
+    <title>Hangman Game</title>
+      <h1><center>Hangman</center></h1>
+  </head>
+  <body style = "text-align:center;">
+    <p>Enter the word to guess</p>
+    <form>
+        <input type="text" placeholder="Enter word">
+        <input type="button" value="Enter word" id="enterWord" onclick="startGame();">
+    </form>
+    <br>
+    <div id="alphabethButtons"></div>
+    <p id="guessedWord"></p>
+	<p id="lives"></p>
+	<input type="button" id="restartGame" value="Restart the Game" onclick="restart();"/>
+	<script src="script.js"></script>
+  </body>
+</html>
