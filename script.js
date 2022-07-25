@@ -3,12 +3,12 @@ document.getElementById("restartGame").style.visibility = "hidden";
 function startGame() {
     let wordToGuess = document.querySelector('input').value;    
     let wordLength = wordToGuess.length;
-    if (wordLength != 0) {
+    if(wordLength != 0) {
         let guessedLetters = [];
         let reLetter = wordLength;
         let foundLetters;
         let button;
-        for (let i=0; i < wordLength; ++i) {
+        for(let i=0; i < wordLength; ++i) {
             guessedLetters[i] = " _";
         }
 
@@ -27,14 +27,14 @@ function startGame() {
         function onClick(button) {
             button.addEventListener("click", function() {
                 foundLetters = 0;
-                for (let j=0; j <= wordLength * 2; ++j) {
-                    if  (wordToGuess[j] == button.textContent) {
+                for(let j=0; j <= wordLength * 2; ++j) {
+                    if(wordToGuess[j] == button.textContent) {
                         guessedLetters[j] = button.textContent;
                         foundLetters = 1;
                         lettersUntilWin();
                     }
                 }
-                if (foundLetters == 0) {
+                if(foundLetters == 0) {
                     decreaseLives();
                 }
             document.getElementById("guessedWord").innerHTML = guessedLetters.join('');
@@ -46,7 +46,7 @@ function startGame() {
         function decreaseLives(button) {
             --wordLength;
             document.getElementById("lives").innerHTML = "You have " + wordLength + " lives left";
-            if (wordLength == 0) {
+            if(wordLength == 0) {
                 document.getElementById("lives").innerHTML = "You lost!</br>The word was: " + wordToGuess;
                 document.getElementById("restartGame").style.visibility = 'visible';
                 document.getElementById("alphabethButtons").style.visibility = 'hidden';
